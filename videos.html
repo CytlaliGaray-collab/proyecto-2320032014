@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Fauna de México</title>
+    <style>
+        :root {
+            --color-bosque-oscuro: #1B5E20;
+            --color-bosque-medio: #388E3C;
+            --color-agua-rio: #0277BD;
+            --color-tierra: #5D4037;
+            --color-sol: #F57F17;
+            --color-claro: #F1F8E9;
+            --color-alerta: #C62828;
+            --color-info: #1565C0;
+            --color-exito: #2E7D32;
+            --texto-oscuro: #263238;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: var(--color-claro);
+            background-image: linear-gradient(rgba(241, 248, 233, 0.93), rgba(241, 248, 233, 0.93)), 
+                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--texto-oscuro);
+            line-height: 1.7;
+        }
+        header { 
+            background: linear-gradient(135deg, var(--color-bosque-oscuro), var(--color-agua-rio));
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--color-sol);
+        }
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        header p {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        nav { 
+            background-color: var(--color-sol); 
+            padding: 15px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        nav a { 
+            color: var(--texto-oscuro); 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 9px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        nav a:hover { 
+            background-color: var(--color-bosque-medio);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        main { 
+            padding: 35px 25px; 
+            max-width: 1100px; 
+            margin: auto;
+        }
+        .tarjeta-video {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(27, 94, 32, 0.2);
+            margin-bottom: 35px;
+            overflow: hidden;
+            border: 3px solid var(--color-bosque-medio);
+        }
+        .titulo-animal {
+            background: linear-gradient(90deg, var(--color-bosque-oscuro), var(--color-bosque-medio));
+            color: white;
+            padding: 18px 25px;
+            font-size: 1.6em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contenedor-video {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px auto;
+            width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .contenedor-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .descripcion-video {
+            padding: 0 30px 20px 30px;
+            font-size: 1.1em;
+            text-align: center;
+            color: var(--texto-oscuro);
+        }
+        footer { 
+            background: linear-gradient(135deg, var(--color-tierra), var(--color-bosque-oscuro));
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 40px;
+            font-size: 1.05em;
+            border-top: 4px solid var(--color-sol);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎥 Galería de Videos</h1>
+        <p>Conoce más sobre cada especie en video</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="ajolote.html">Ajolote</a>
+        <a href="vaquita_marina.html">Vaquita Marina</a>
+        <a href="quetzal.html">Quetzal</a>
+        <a href="lobo_mexicano.html">Lobo Mexicano</a>
+        <a href="teporingo.html">Teporingo</a>
+        <a href="jaguar.html">Jaguar</a>
+        <a href="videos.html">Videos</a>
+        <a href="referencias.html">Referencias</a>
+        <a href="presentacion.html">Presentación</a>
+    </nav>
+
+    <main>
+        <!-- VIDEO: AJOLOTE -->
+        <div class="tarjeta-video">
+            <div class="titulo-animal">
+                🦎 Ajolote
+            </div>
+            <div class="contenedor-video">
+                <iframe src="video/videoplayback.mp4" title="El Ajolote - Animal único de México" allowfullscreen></iframe>
+            </div>
+            <div class="descripcion-video">
+                Conoce por qué el ajolote es uno de los animales más sorprendentes del mundo y su importancia para la ciencia.
+            </div>
+        </div>
+
+        <!-- VIDEO: VAQUITA MARINA -->
+        <div class="tarjeta-video">
+            <div class="titulo-animal">
+                🐬 Vaquita Marina
+            </div>
+            <div class="contenedor-video">
+                <iframe src="video/videoplayback (2).mp4" title="La Vaquita Marina - En peligro crítico" allowfullscreen></iframe>
+            </div>
+            <div class="descripcion-video">
+                Descubre la historia del mamífero marino más amenazado del planeta, que solo vive en México.
+            </div>
+        </div>
+
+        <!-- VIDEO: QUETZAL -->
+        <div class="tarjeta-video">
+            <div class="titulo-animal">
+                🐦 Quetzal
+            </div>
+            <div class="contenedor-video">
+                <iframe src="video/videoplayback (3).mp4" title="El Quetzal - Símbolo de libertad" allowfullscreen></iframe>
+            </div>
+            <div class="descripcion-video">
+                Admira la belleza de esta ave legendaria y su papel sagrado en las culturas antiguas de México.
+            </div>
+        </div>
+
+        <!-- VIDEO: LOBO MEXICANO -->
+        <div class="tarjeta-video">
+            <div class="titulo-animal">
+                🐺 Lobo Mexicano
+            </div>
+            <div class="contenedor-video">
+                <iframe src="video/videoplayback (4).mp4" title="El Lobo Mexicano - Regreso a casa" allowfullscreen></iframe>
+            </div>
+            <div class="descripcion-video">
+                Conoce los esfuerzos para recuperar al lobo mexicano, una subespecie única de nuestros bosques.
+            </div>
+        </div>
+
+        <!-- VIDEO: TEPORINGO -->
+        <div class="tarjeta-video">
+            <div class="titulo-animal">
+                🐇 Teporingo
+            </div>
+            <div class="contenedor-video">
+                <iframe src="video/videoplayback (8).mp4" title="El Teporingo - Conejo de los volcanes" allowfullscreen></iframe>
+            </div>
+            <div class="descripcion-video">
+                Aprende sobre este pequeño conejo que solo vive cerca de los volcanes del centro de México.
+            </div>
+        </div>
+
+        <!-- VIDEO: JAGUAR -->
+        <div class="tarjeta-video">
+            <div class="titulo-animal">
+                🐆 Jaguar
+            </div>
+            <div class="contenedor-video">
+                <iframe src="video/videoplayback (6).mp4" title="El Jaguar - El rey de la selva" allowfullscreen></iframe>
+            </div>
+            <div class="descripcion-video">
+                Descubre por qué el jaguar es el felino más fuerte de América y su importancia para nuestras selvas.
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Elaborado por: Arirh Cytlali Garay Lopez | Proyecto Escolar 🌿</p>
+    </footer>
+</body>
+</html>

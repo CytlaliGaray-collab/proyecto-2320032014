@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencias y Fuentes de Información</title>
+    <style>
+        :root {
+            --fondo-principal: #D8F3DC;
+            --titulos: #2D6A4F;
+            --subtitulos: #00B4D8;
+            --texto: #5C4033;
+            --botones: #FF8C42;
+            --detalles: #FFD60A;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: var(--fondo-principal); 
+            color: var(--texto);
+            line-height: 1.6;
+        }
+        header { 
+            background-color: var(--titulos); 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+        }
+        nav { 
+            background-color: var(--detalles); 
+            padding: 12px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        nav a { 
+            color: var(--texto); 
+            margin: 0 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        nav a:hover { 
+            background-color: var(--botones);
+            color: white;
+        }
+        main { 
+            padding: 25px; 
+            max-width: 1100px; 
+            margin: auto; 
+        }
+        h2 { 
+            color: var(--subtitulos); 
+            margin: 25px 0 10px;
+            border-bottom: 2px solid var(--detalles);
+            padding-bottom: 5px;
+        }
+        .bloque {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        ul {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        a.fuente {
+            color: var(--titulos);
+            font-weight: bold;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+        a.fuente:hover {
+            color: var(--botones);
+            text-decoration: underline;
+        }
+        .descripcion {
+            margin-top: 5px;
+            font-size: 0.95em;
+            color: #666;
+        }
+        footer { 
+            background-color: var(--titulos); 
+            color: white; 
+            text-align: center; 
+            padding: 15px; 
+            margin-top: 30px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>📚 Referencias y Fuentes de Información</h2>
+        <p>Lugares, sitios y libros donde puedes consultar y ver más información</p>
+    </header>
+
+    <nav>
+           <a href="index.html">Inicio</a>
+        <a href="ajolote.html">Ajolote</a>
+        <a href="vaquita_marina.html">Vaquita Marina</a>
+        <a href="quetzal.html">Quetzal</a>
+        <a href="lobo_mexicano.html">Lobo Mexicano</a>
+        <a href="teporingo.html">Teporingo</a>
+        <a href="jaguar.html">Jaguar</a>
+        <a href="videos.html">Videos</a>
+        <a href="referencias.html">Referencias</a>
+        <a href="presentacion.html">Presentación</a>
+   
+    </nav>
+
+    <main>
+        <div class="bloque">
+            <h2>🌐 Sitios Web Oficiales y Recomendados</h2>
+            <p>Estas son las páginas oficiales del gobierno y organizaciones serias donde puedes ver información confiable, datos, fotografías y estudios científicos sobre estos animales:</p>
+            
+            <ul>
+                <li>
+                    <a class="fuente" href="https://www.biodiversidad.gob.mx" target="_blank">CONABIO - Comisión Nacional para el Conocimiento y Uso de la Biodiversidad</a>
+                    <div class="descripcion">Es la fuente principal y más confiable de información en México. Aquí encuentras fichas técnicas, mapas, fotografías y todo sobre dónde viven y cómo están nuestras especies. Es el sitio oficial para conocer la naturaleza de México.</div>
+                </li>
+
+                <li>
+                    <a class="fuente" href="https://semarnat.gob.mx" target="_blank">SEMARNAT - Secretaría de Medio Ambiente</a>
+                    <div class="descripcion">Aquí están las leyes oficiales que protegen a los animales, la lista oficial de especies en peligro y las normas para cuidar el medio ambiente. Puedes ver qué animales están prohibidos cazar o comerciar.</div>
+                </li>
+
+                <li>
+                    <a class="fuente" href="https://wwf.org.mx" target="_blank">WWF México - Fondo Mundial para la Naturaleza</a>
+                    <div class="descripcion">Organización internacional que trabaja en México. Aquí puedes ver proyectos de conservación, videos, noticias y cómo ayudan a salvar al jaguar, lobo mexicano y vaquita marina.</div>
+                </li>
+
+                <li>
+                    <a class="fuente" href="https://www.gob.mx/profepa" target="_blank">PROFEPA - Protección al Ambiente</a>
+                    <div class="descripcion">Aquí explican cómo denunciar si ves tráfico de animales o daño a la naturaleza, y tienen reportes sobre el estado de las áreas naturales protegidas.</div>
+                </li>
+
+                <li>
+                    <a class="fuente" href="https://es.wikipedia.org" target="_blank">Wikipedia - La Enciclopedia Libre</a>
+                    <div class="descripcion">Fuente consultada para datos generales, historia y características básicas de cada especie. Contiene información resumida y fácil de leer, revisada por la comunidad.</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h2>📖 Libros y Materiales Consultados</h2>
+            <p>Libros de texto, enciclopedias y materiales educativos donde se obtuvo la información detallada para este trabajo:</p>
+            
+            <ul>
+                <li><strong>Libro: "Biodiversidad de México"</strong> - Editorial CONABIO. Explica detalladamente cada región del país y sus animales.</li>
+                <li><strong>Enciclopedia de la Fauna Mexicana</strong> - Grupo Editorial Tomo. Contiene ilustraciones y descripciones de mamíferos, aves y anfibios.</li>
+                <li><strong>Norma Oficial Mexicana NOM-059</strong> - Documento oficial que lista qué especies están en riesgo y por qué.</li>
+                <li><strong>Atlas de los Mamíferos de México</strong> - Libro científico con mapas de distribución y datos de vida silvestre.</li>
+                <li><strong>Revista: "Ciencias" - UNAM</strong> - Artículos sobre el ajolote y su capacidad de regeneración, estudios realizados por universidades mexicanas.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h2>🎥 Otros lugares donde puedes ver más</h2>
+            <p>Si te interesa saber más, puedes buscar en estos lugares información visual, documentales y videos:</p>
+            
+            <ul>
+                <li><strong>Canal: Nat Geo México (National Geographic)</strong> - Documentales y videos sobre la vida de estos animales en su hábitat real.</li>
+                <li><strong>YouTube: WWF México y CONABIO Oficial</strong> - Videos cortos explicando la situación actual de la vaquita marina, el jaguar y el ajolote.</li>
+                <li><strong>Museo de Historia Natural (CDMX)</strong> - Exhibiciones y maquetas donde puedes ver representaciones de estos animales y sus ecosistemas.</li>
+                <li><strong>Zoológicos y Reservas:</strong> Zoológico de Chapultepec, Zoológico de Guadalajara y Reserva de la Biosfera de Calakmul, donde protegen y estudian estas especies.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>Fuentes consultadas para la elaboración del proyecto escolar</p>
+    </footer>
+</body>
+</html>

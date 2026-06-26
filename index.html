@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Fauna de México</title>
+    <style>
+        :root {
+            --color-bosque-oscuro: #1B5E20;
+            --color-bosque-medio: #388E3C;
+            --color-agua-rio: #0277BD;
+            --color-tierra: #5D4037;
+            --color-sol: #F57F17;
+            --color-claro: #F1F8E9;
+            --color-alerta: #C62828;
+            --color-info: #1565C0;
+            --color-exito: #2E7D32;
+            --texto-oscuro: #263238;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: var(--color-claro);
+            background-image: linear-gradient(rgba(241, 248, 233, 0.93), rgba(241, 248, 233, 0.93)), 
+                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--texto-oscuro);
+            line-height: 1.7;
+        }
+        header { 
+            background: linear-gradient(135deg, var(--color-bosque-oscuro), var(--color-agua-rio));
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--color-sol);
+        }
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        header p {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        nav { 
+            background-color: var(--color-sol); 
+            padding: 15px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        nav a { 
+            color: var(--texto-oscuro); 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 9px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        nav a:hover { 
+            background-color: var(--color-bosque-medio);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        main { 
+            padding: 35px 25px; 
+            max-width: 1200px; 
+            margin: auto;
+        }
+        .tarjeta-principal {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(27, 94, 32, 0.2);
+            margin-bottom: 35px;
+            overflow: hidden;
+            border: 3px solid var(--color-bosque-medio);
+        }
+        .titulo-seccion {
+            background: linear-gradient(90deg, var(--color-bosque-oscuro), var(--color-bosque-medio));
+            color: white;
+            padding: 18px 25px;
+            font-size: 1.6em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contenido {
+            padding: 25px 30px;
+            font-size: 1.1em;
+        }
+        .galeria-inicio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 25px 30px;
+            background-color: rgba(241, 248, 233, 0.5);
+        }
+        .foto-animal {
+            text-align: center;
+            background-color: white;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .foto-animal:hover {
+            transform: translateY(-5px);
+        }
+        .foto-animal img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid var(--color-agua-rio);
+        }
+        .foto-animal p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--color-tierra);
+        }
+        .video-contenedor {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            margin-top: 15px;
+        }
+        .video-contenedor iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        table th {
+            background-color: var(--color-bosque-medio);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.05em;
+        }
+        table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        table tr:hover td {
+            background-color: #E8F5E9;
+        }
+        .razon-tema {
+            background-color: #FFF8E1;
+            border-left: 5px solid var(--color-sol);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+        footer { 
+            background: linear-gradient(135deg, var(--color-tierra), var(--color-bosque-oscuro));
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 40px;
+            font-size: 1.05em;
+            border-top: 4px solid var(--color-sol);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌿 Fauna de México 🌿</h1>
+        <p>Especies representativas y en peligro de extinción</p>
+    </header>
+
+    <nav>
+     <a href="index.html">Inicio</a>
+        <a href="ajolote.html">Ajolote</a>
+        <a href="vaquita_marina.html">Vaquita Marina</a>
+        <a href="quetzal.html">Quetzal</a>
+        <a href="lobo_mexicano.html">Lobo Mexicano</a>
+        <a href="teporingo.html">Teporingo</a>
+        <a href="jaguar.html">Jaguar</a>
+        <a href="videos.html">Videos</a>
+        <a href="referencias.html">Referencias</a>
+        <a href="presentacion.html">Presentación</a>
+    </nav>
+
+    <main>
+        <!-- SECCIÓN: INFORMACIÓN DEL TEMA -->
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                📚 Sobre el tema
+            </div>
+            <div class="contenido">
+                <p>México es uno de los países con mayor biodiversidad en el mundo. Posee una gran variedad de climas, ecosistemas y regiones geográficas que permiten que miles de especies de animales habiten en su territorio. Muchas de estas especies son <strong>endémicas</strong>, lo que significa que solo viven aquí y no se encuentran en ningún otro lugar del planeta.</p>
+                <br>
+                <p>Este proyecto tiene como objetivo dar a conocer seis animales representativos de nuestra fauna: el Ajolote, la Vaquita Marina, el Quetzal, el Lobo Mexicano, el Teporingo y el Jaguar. Todos ellos son importantes para el equilibrio de la naturaleza, pero actualmente se encuentran en situación de riesgo, amenazados o en peligro de extinción debido a actividades humanas como la contaminación, la destrucción de sus hábitats y la caza.</p>
+                <br>
+                <p>Aquí aprenderás sus características, dónde viven, qué comen, por qué están en riesgo y qué podemos hacer para protegerlos y conservarlos para las futuras generaciones.</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: IMÁGENES DE LOS ANIMALES -->
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                📸 Galería de especies
+            </div>
+            <div class="galeria-inicio">
+                <div class="foto-animal">
+                    <img src="imagenes/Foto del ajolote.jpg" alt="Ajolote">
+                    <p>Ajolote</p>
+                </div>
+                <div class="foto-animal">
+                    <img src="imagenes/Foto de la vaquita marina.gif" alt="Vaquita Marina">
+                    <p>Vaquita Marina</p>
+                </div>
+                <div class="foto-animal">
+                    <img src="imagenes/OIP.jpg" alt="Quetzal">
+                    <p>Quetzal</p>
+                </div>
+                <div class="foto-animal">
+                    <img src="imagenes/OIP (6).jpg" alt="Lobo Mexicano">
+                    <p>Lobo Mexicano</p>
+                </div>
+                <div class="foto-animal">
+                    <img src="imagenes/OIP (4).jpg" alt="Teporingo">
+                    <p>Teporingo</p>
+                </div>
+                <div class="foto-animal">
+                    <img src="imagenes/OIP (8).jpg" alt="Jaguar">
+                    <p>Jaguar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: VIDEO INFORMATIVO -->
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                🎥 Video informativo
+            </div>
+            <div class="contenido">
+                <p>Conoce más sobre la riqueza natural de México y la importancia de cuidar a nuestras especies:</p>
+                <div class="video-contenedor">
+                    <!-- Puedes cambiar el enlace por el video que prefieras -->
+                    <iframe src="video/videoplayback (1).mp4" title="Biodiversidad de México" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: TABLA COMPARATIVA -->
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                📊 Tabla resumen
+            </div>
+            <div class="contenido">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre común</th>
+                            <th>Nombre científico</th>
+                            <th>Hábitat principal</th>
+                            <th>Estado de conservación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ajolote</td>
+                            <td><i>Ambystoma mexicanum</i></td>
+                            <td>Canales de Xochimilco, CDMX</td>
+                            <td>🔴 En peligro crítico</td>
+                        </tr>
+                        <tr>
+                            <td>Vaquita Marina</td>
+                            <td><i>Phocoena sinus</i></td>
+                            <td>Golfo de California</td>
+                            <td>🔴 En peligro crítico</td>
+                        </tr>
+                        <tr>
+                            <td>Quetzal</td>
+                            <td><i>Pharomachrus mocinno</i></td>
+                            <td>Bosques nubosos</td>
+                            <td>🟡 Casi amenazado</td>
+                        </tr>
+                        <tr>
+                            <td>Lobo Mexicano</td>
+                            <td><i>Canis lupus baileyi</i></td>
+                            <td>Bosques y montañas del norte</td>
+                            <td>🔴 En peligro</td>
+                        </tr>
+                        <tr>
+                            <td>Teporingo</td>
+                            <td><i>Romerolagus diazi</i></td>
+                            <td>Zonas volcánicas del centro</td>
+                            <td>🔴 En peligro</td>
+                        </tr>
+                        <tr>
+                            <td>Jaguar</td>
+                            <td><i>Panthera onca</i></td>
+                            <td>Selvas y humedales del sur</td>
+                            <td>🟡 Casi amenazado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: POR QUÉ HICE ESTE TEMA -->
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                ❓ ¿Por qué elegí este tema?
+            </div>
+            <div class="contenido">
+                <div class="razon-tema">
+                    <p>Escogí hablar sobre la fauna de México y estas especies en particular porque considero que es fundamental conocer y valorar lo que tenemos en nuestro país. Muchas veces no sabemos que animales tan únicos y especiales viven solo aquí, y tampoco nos damos cuenta de que están desapareciendo.</p>
+                    <br>
+                    <p>Quise realizar este trabajo para informar a los demás sobre la situación de cada animal, resaltar su importancia en la naturaleza y explicar que todos podemos ayudar a protegerlos. Al conocerlos mejor, aprendemos a respetarlos y entendemos que cuidar el medio ambiente es cuidar también nuestra propia vida y cultura, ya que muchos de estos animales forman parte de nuestra historia y tradiciones.</p>
+                    <br>
+                    <p>Mi objetivo es que este proyecto sirva para reflexionar y tomar conciencia de que aún estamos a tiempo de actuar y salvar a estas especies antes de que sea demasiado tarde.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Elaborado por: Arirh Cytlali Garay Lopez | Proyecto Escolar 🌿</p>
+    </footer>
+</body>
+</html>

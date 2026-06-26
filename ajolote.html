@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajolote - Fauna de México</title>
+    
+    <style>
+        :root {
+            --color-bosque-oscuro: #1B5E20;
+            --color-bosque-medio: #388E3C;
+            --color-agua-rio: #0277BD;
+            --color-tierra: #5D4037;
+            --color-sol: #F57F17;
+            --color-claro: #F1F8E9;
+            --color-alerta: #C62828;
+            --color-info: #1565C0;
+            --color-exito: #2E7D32;
+            --texto-oscuro: #263238;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: var(--color-claro);
+            background-image: linear-gradient(rgba(241, 248, 233, 0.93), rgba(241, 248, 233, 0.93)), 
+                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--texto-oscuro);
+            line-height: 1.7;
+        }
+        header { 
+            background: linear-gradient(135deg, var(--color-bosque-oscuro), var(--color-agua-rio));
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--color-sol);
+        }
+        header h1 {
+            font-size: 2.6em;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        header p {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        nav { 
+            background-color: var(--color-sol); 
+            padding: 15px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        nav a { 
+            color: var(--texto-oscuro); 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 9px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        nav a:hover { 
+            background-color: var(--color-bosque-medio);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        main { 
+            padding: 35px 25px; 
+            max-width: 1100px; 
+            margin: auto;
+        }
+        .tarjeta-principal {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(27, 94, 32, 0.2);
+            margin-bottom: 35px;
+            overflow: hidden;
+            border: 3px solid var(--color-bosque-medio);
+        }
+        .titulo-seccion {
+            background: linear-gradient(90deg, var(--color-bosque-oscuro), var(--color-bosque-medio));
+            color: white;
+            padding: 18px 25px;
+            font-size: 1.6em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contenido-datos {
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+        .dato-bloque {
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid;
+            font-size: 1.1em;
+        }
+        .dato-bloque.info { background-color: #E3F2FD; border-color: var(--color-info); }
+        .dato-bloque.habitat { background-color: #E8F5E9; border-color: var(--color-exito); }
+        .dato-bloque.alerta { background-color: #FFEBEE; border-color: var(--color-alerta); }
+        .dato-bloque.dato { background-color: #FFF8E1; border-color: var(--color-sol); }
+        .dato-bloque strong {
+            display: block;
+            font-size: 1.15em;
+            margin-bottom: 5px;
+            color: var(--texto-oscuro);
+        }
+        .galeria-imagenes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 25px 30px;
+            background-color: rgba(241, 248, 233, 0.5);
+        }
+        .imagen-item {
+            text-align: center;
+            background-color: white;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .imagen-item:hover {
+            transform: translateY(-5px);
+        }
+        .imagen-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid var(--color-agua-rio);
+        }
+        .imagen-item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--color-tierra);
+            font-size: 0.95em;
+        }
+        footer { 
+            background: linear-gradient(135deg, var(--color-tierra), var(--color-bosque-oscuro));
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 40px;
+            font-size: 1.05em;
+            border-top: 4px solid var(--color-sol);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🐸 Ajolote</h1>
+        <p><i>Ambystoma mexicanum</i></p>
+    </header>
+
+    <nav>
+     <a href="index.html">Inicio</a>
+        <a href="ajolote.html">Ajolote</a>
+        <a href="vaquita_marina.html">Vaquita Marina</a>
+        <a href="quetzal.html">Quetzal</a>
+        <a href="lobo_mexicano.html">Lobo Mexicano</a>
+        <a href="teporingo.html">Teporingo</a>
+        <a href="jaguar.html">Jaguar</a>
+        <a href="videos.html">Videos</a>
+        <a href="referencias.html">Referencias</a>
+        <a href="presentacion.html">Presentación</a>
+    </nav>
+
+    <main>
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                📋 Información Detallada
+            </div>
+            <div class="contenido-datos">
+                <div class="dato-bloque info">
+                    <strong>📌 Nombre común:</strong> Ajolote
+                </div>
+                <div class="dato-bloque info">
+                    <strong>🔬 Nombre científico:</strong> <i>Ambystoma mexicanum</i>
+                </div>
+                <div class="dato-bloque habitat">
+                    <strong>📖 Descripción:</strong> Anfibio que conserva características de larva durante toda su vida.
+                </div>
+                <div class="dato-bloque habitat">
+                    <strong>🌿 Hábitat:</strong> Lagos y canales de Xochimilco, en Ciudad de México.
+                </div>
+                <div class="dato-bloque habitat">
+                    <strong>🦐 Alimentación:</strong> Insectos, gusanos, peces pequeños y crustáceos.
+                </div>
+                <div class="dato-bloque info">
+                    <strong>📏 Tamaño y peso:</strong> Hasta 30 cm de largo.
+                </div>
+                <div class="dato-bloque alerta">
+                    <strong>⚠️ Estado de conservación:</strong> En peligro crítico.
+                </div>
+                <div class="dato-bloque dato">
+                    <strong>💡 Datos interesantes:</strong> Puede regenerar patas, cola e incluso partes de órganos.
+                </div>
+                <div class="dato-bloque alerta">
+                    <strong>🛡️ ¿Cómo protegerlo?</strong> Cuidar los canales y evitar la contaminación.
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta-principal">
+            <div class="titulo-seccion">
+                📸 Galería Visual
+            </div>
+            <div class="galeria-imagenes">
+                <div class="imagen-item">
+                    <img src="imagenes/Foto del ajolote.jpg" alt="Foto del ajolote">
+                    <p>🦎 El Ajolote</p>
+                </div>
+                <div class="imagen-item">
+                    <img src="imagenes/Canales de Xochimilco.jpg" alt="Canales de Xochimilco">
+                    <p>🌊 Su hogar: Xochimilco</p>
+                </div>
+                <div class="imagen-item">
+                    <img src="imagenes/Insectos y gusanos.jpg" alt="Insectos y gusanos">
+                    <p>🍽️ Qué come</p>
+                </div>
+                <div class="imagen-item">
+                    <img src="imagenes/Programa de conservación.jpg" alt="Programa de conservación">
+                    <p>🚑 Programas de ayuda</p>
+                </div>
+                <div class="imagen-item">
+                    <img src="imagenes/Regeneración de extremidad.jpg" alt="Regeneración de extremidad">
+                    <p>✨ Regeneración mágica</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Elaborado por: Arirh Cytlali Garay Lopez | Proyecto Escolar 🌿</p>
+    </footer>
+</body>
+</html>
